@@ -5,7 +5,7 @@ namespace RazorPagesTestSample.Data
     #region snippet1
     public class Message
     {
-        // This is used to test the anti-forgery token
+        // This is a simple integer
         public int Id { get; set; }
 
         [Required]
