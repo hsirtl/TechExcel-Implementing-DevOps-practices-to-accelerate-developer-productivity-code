@@ -97,12 +97,12 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: '${{ env.appPrefix }}-dev'
+          app-name: '${{ env.appPrefix }}-test'
           images: ${{ env.registryName }}/${{ env.repositoryName }}:${{ env.tag }}
 
   deploy-to-prod:
     runs-on: ubuntu-latest
-    needs: [dockerBuildPush, deploy-to-dev]
+    needs: [dockerBuildPush, deploy-to-test]
     environment:
       name: prod
       url: https://${{ env.appPrefix }}-prod.azurewebsites.net/
@@ -118,5 +118,5 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: '${{ env.appPrefix }}-dev'
+          app-name: '${{ env.appPrefix }}-prod'
           images: ${{ env.registryName }}/${{ env.repositoryName }}:${{ env.tag }}
