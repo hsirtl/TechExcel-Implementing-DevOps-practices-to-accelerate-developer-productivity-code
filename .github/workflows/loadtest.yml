@@ -6,6 +6,10 @@ on:
         - main
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   AZURE_WEBAPP_NAME: "a7ltm5uwsxhxe-dev"    # set this to your application's name
   LOAD_TEST_RESOURCE: "a7ltm5uwsxhxe-ltest"   # set this to your Azure Load Test resource's name
