@@ -2,6 +2,10 @@
   on:
     workflow_dispatch
 
+  permissions:
+    id-token: write
+    contents: read
+
   # Environment variables are defined in an "env" section.
   # We set the target environment to dev.
   # Open the deploy-advanced.yml file to see how we can accept user input
@@ -14,6 +18,7 @@
   name: Azure Bicep
   jobs:
     # This script has one job: build and deploy the IaC resources
+    
     build-and-deploy:
       # We run this on an Ubuntu-based GitHub hosted runner. This hosted runner
       # has certain software already installed, including az cli
