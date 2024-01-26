@@ -5,6 +5,8 @@ namespace RazorPagesTestSample.Data
     #region snippet1
     public class Message
     {
+        // a comment triggering .NET Deploy
+
         // a new comment for issue 9
         public int Id { get; set; }
 
